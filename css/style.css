@@ -1,0 +1,205 @@
+/* core styles */
+body {
+  /* removing margins */
+  margin: 0;
+  /* fonts */
+  font-family: Arial, Helvetica, sans-serif;
+  /* background gray */
+  background: #333;
+  /* text color white */
+  color: #fff;
+  /* makes font a bit bigger =11px, or 110 percent of default */
+  font-size: 1.1em;
+  line-height: 1.5;
+  /* moves all text to center */
+  text-align: center;
+}
+
+img {
+  display: block;
+  /* 100 percent of container */
+  width: 100%;
+  /* height auto for responsive */
+  height:auto;
+}
+
+h1, h2, h3, {
+  margin: 0;
+  /* padding Y axis, X axis */
+  padding: 1em 0;
+}
+
+p {
+  margin: 1em;
+  /* padding Y axis, X axis */
+  padding: 1em 0;
+}
+
+.btn {
+  /* normally display block but button would be fill width, inline will keep same size but force next element to next line */
+  display: inline block;
+  /* btn background */
+  background: #333;
+  /* text color */
+  color: #fff;
+  /* text-decoration */
+  text-decoration: none;
+  /* padding Y X axis */
+  padding: 1em 2em;
+  /* thickness, type of border, color */
+  border: 1px solid #666;
+  /* YX */
+  margin: .5em 0;
+}
+
+.btn:hover {
+  background: #eaeaea;
+  color: #333
+}
+
+/* header showcase */
+#showcase {
+  min-height: 450px;
+  color: #fff;
+  text-align: center;
+
+}
+
+#showcase .bg-image {
+  /* over showcase div */
+  position:absolute;
+  /* color */
+  background:#333;
+  background-image: url("../img/showcase1.jpg");
+  /* centers image */
+  background-position: center;
+  /* prevents repeat */
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* full width of window */
+  width: 100%;
+  /* matches size of div with text */
+  height:450px;
+  /* pushes image below opacity and text */
+  z-index: -1;
+  opacity: 0.4;
+}
+
+#showcase h1 {
+  padding-top: 100px;
+  padding-bottom: 0;
+}
+
+ #showcase .content-wrap #section-a .content-wrap{
+  padding: 0 1.5em;
+}
+
+/* section A */
+#section-a {
+  background: #eaeaea;
+  color: #333;
+  padding-bottom: 2em;
+
+}
+
+/* section B */
+#section-b {
+  padding: 2em 1em 1em;
+}
+
+/* UL */
+#section-b ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#section-b li {
+  margin-bottom: 1em;
+  background: #fff;
+  color: #333;
+}
+
+.card-content {
+  padding: 1.5em;
+}
+
+/* section C */
+#section-c {
+  background: #fff;
+  color: #333;
+  padding: 2em;
+
+}
+
+/* section D boxes */
+#section-d .box {
+  padding: 2em;
+  color: #fff;
+
+}
+
+#section-d .box:first-child {
+  background: #2690d4;
+}
+
+#main-footer {
+  padding: 2em;
+  background: #000;
+  color: #fff;
+  text-align: center;
+
+}
+
+#main-footer a {
+  color: #2690d4;
+  text-decoration: none;
+}
+
+/* Media Queries //only in effect over 700 pixels*/
+@media(min-width: 700px) {
+  .grid{
+    /* grabbing grid class div and display grid value */
+    display: grid;
+    /* defining template columns. min max takes in auto which is default size and then reduces outer colums while keeping inner at 25 em each, until mead query deactivates  */
+    grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+  }
+
+  #section-a .content-text {
+    columns: 2;
+    column-gap: 2em;
+  }
+
+  #section-a .content-text p {
+    padding-top:0;
+  }
+
+
+  .content-wrap,
+  #section-b ul {
+
+    grid-column: 2/4;
+  }
+
+  .box {
+    grid-column:span 2;
+  }
+
+
+  #section-b ul {
+    display: flex;
+    justify-content: space-around;
+
+  }
+  #section-b li {
+    width: 31%;
+  }
+
+  #main-footer {
+    padding: 2em;
+    background: #000;
+    color: #fff;
+    text-align: center;
+  
+  }
+}
